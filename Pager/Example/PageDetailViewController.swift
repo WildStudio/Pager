@@ -24,12 +24,3 @@ final class PageDetailViewController: UIViewController {
         return Storyboard.Demo.instantiate(PageDetailViewController.self)
     }
 }
-
-extension PageDetailViewController: ItemPresentable {
-    static func configuredWith(item: Presentable) -> UIViewController {
-        let viewController = PageDetailViewController.instantiate()
-        viewController.descriptionText = item.description
-        return viewController
-    }
-}
-

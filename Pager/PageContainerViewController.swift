@@ -46,8 +46,8 @@ final class PageContainerViewController: UIViewController {
 
         hideLoadingOverlay(false, false)
 
-//        configurePagerDataSource(items)
-//        pagerViewController?.configure(with:items)
+        //        configurePagerDataSource(items)
+        //        pagerViewController?.configure(with:items)
     }
 
     public func configure(with items: [Item]) {

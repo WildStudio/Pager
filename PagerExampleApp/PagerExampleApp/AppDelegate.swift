@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  Pager
+//  PagerExampleApp
 //
-//  Created by Christian Aranda on 02/02/2019.
+//  Created by Christian Aranda on 11/02/2019.
 //  Copyright © 2019 We Are Mobile First. All rights reserved.
 //
 
 import UIKit
+import Pager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,5 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
+
 }
 
