@@ -9,6 +9,7 @@
 import UIKit
 
 final class PageContainerViewController: UIViewController {
+    
 
     private var dataSource: PagesDataSource!
     private weak var pageViewController: UIPageViewController?
@@ -43,26 +44,21 @@ final class PageContainerViewController: UIViewController {
             .compactMap { $0 as? PagerMenuViewController }.first
         pagerViewController?.delegate = self
 
-        //        hideLoadingOverlay(false, false)
+        hideLoadingOverlay(false, false)
 
-        configurePagerDataSource(items)
-        pagerViewController?.configure(with:items)
+//        configurePagerDataSource(items)
+//        pagerViewController?.configure(with:items)
     }
 
-    private func configure() {
-        //        guard isViewLoaded else {
-        //            return
-        //        }
-        //
-        //        switch viewModel.viewState.value {
-        //        case .ready:
-        //            guard !viewModel.channels.isEmpty else { return }
-        //            hideLoadingOverlay(true, false)
-        //            configurePagerDataSource(viewModel.channels)
-        //            channelPagerViewController?.configure(with: viewModel.channels)
-        //        default:
-        //            break
-        //        }
+    public func configure(with items: [Item]) {
+        guard isViewLoaded else {
+            return
+        }
+
+        guard !items.isEmpty else { return }
+        hideLoadingOverlay(true, false)
+        configurePagerDataSource(items)
+        pagerViewController?.configure(with: items)
     }
 
     private func navigateToPage(item: Item) {
@@ -116,7 +112,7 @@ extension PageContainerViewController: UIPageViewControllerDelegate {
                             didFinishAnimating finished: Bool,
                             previousViewControllers: [UIViewController],
                             transitionCompleted completed: Bool) {
-        //        self.viewModel.pageTransition(completed: completed)
+        pageTransition(completed: completed)
     }
 
     func pageViewController(
@@ -130,7 +126,7 @@ extension PageContainerViewController: UIPageViewControllerDelegate {
         nextPageIndex = index
     }
 
-    func pageTransition(completed: Bool) {
+    private func pageTransition(completed: Bool) {
         if completed {
             currentPageIndex = nextPageIndex
             navigateToPage(item: items[safe: currentPageIndex]!)
