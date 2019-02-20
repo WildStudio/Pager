@@ -18,9 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fJ6-ha-JUH" userLabel="ImageView">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fJ6-ha-JUH" userLabel="ImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="999" constant="300" id="XNN-3R-Ncr"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwp-5H-I5y" userLabel="SubitleLabel">
-                                <rect key="frame" x="10" y="342" width="355" height="20.5"/>
+                                <rect key="frame" x="10" y="362" width="355" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Mwp-5H-I5y" secondAttribute="bottom" constant="10" id="WM8-1K-TnO"/>
                             <constraint firstAttribute="trailing" secondItem="fJ6-ha-JUH" secondAttribute="trailing" id="a0C-7h-mHO"/>
                             <constraint firstItem="Z1n-VB-Ucl" firstAttribute="top" secondItem="fJ6-ha-JUH" secondAttribute="bottom" constant="10" id="h0j-YC-0bq"/>
-                            <constraint firstItem="Mwp-5H-I5y" firstAttribute="top" secondItem="Z1n-VB-Ucl" secondAttribute="bottom" id="lWp-9T-Laa"/>
+                            <constraint firstItem="Mwp-5H-I5y" firstAttribute="top" secondItem="Z1n-VB-Ucl" secondAttribute="bottom" constant="20" id="lWp-9T-Laa"/>
                             <constraint firstAttribute="trailing" secondItem="Z1n-VB-Ucl" secondAttribute="trailing" constant="10" id="obs-id-gSh"/>
                             <constraint firstItem="fJ6-ha-JUH" firstAttribute="top" secondItem="dkk-ZI-T3g" secondAttribute="top" id="pfB-GC-6QZ"/>
                         </constraints>
