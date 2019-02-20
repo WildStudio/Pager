@@ -11,12 +11,20 @@ import Pager
 
 class ViewController: UIViewController {
 
-    let items = [Item(title: "Item 1", description: "item 1"), Item(title: "Item 2", description: "item 2"), Item(title: "Item 3", description: "item 3"), Item(title: "Item 4", description: "item 4")]
+    let items = [Item(title: "Air Jordan 1", description: "Air Jordan 1"),
+                 Item(title: "Air Jordan 2", description: "Air Jordan 2"),
+                 Item(title: "Air Jordan 3", description: "Air Jordan 3"),
+                 Item(title: "Air Jordan 4", description: "Air Jordan 4"),
+                 Item(title: "Air Jordan 5", description: "Air Jordan 5"),
+                 Item(title: "Air Jordan 6", description: "Air Jordan 6"),
+                 Item(title: "Air Jordan 7", description: "Air Jordan 7")]
 
     @IBAction func didTapStartButton(_ sender: Any) {
+        let controller = Pager.PageContainerViewController.instantiate()
+        present(controller, animated: true)
 
-        var controller = Pager.PageContainerViewController.instantiate()
-        controller.configure(with: items, controller: PageDetailViewController())
+        let controllers = items.map { _ in PageDetailViewController.instantiate() ?? PageDetailViewController() }
+        controller.configure(with: items, controllers: controllers)
     }
 }
 

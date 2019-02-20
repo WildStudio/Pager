@@ -7,20 +7,38 @@
 //
 
 import UIKit
+import Pager
 
 
 final class PageDetailViewController: UIViewController {
-    @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var subtitleLabel: UILabel!
+
+    private static let storyboard = "Demo"
+
+    @IBOutlet private var imageView: UIImageView?
+    @IBOutlet private var titleLabel: UILabel?
+    @IBOutlet private var subtitleLabel: UILabel?
     var descriptionText: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(descriptionText ?? "Text is nil")
+        guard let text = descriptionText else { return }
+        titleLabel?.text = text
     }
 
-    static func instantiate() -> PageDetailViewController {
-        return Storyboard.Demo.instantiate(PageDetailViewController.self)
+    static func instantiate() -> PageDetailViewController? {
+        let storyboard = UIStoryboard(name: PageDetailViewController.storyboard, bundle: nil)
+
+        guard let viewController = storyboard.instantiateInitialViewController() as? PageDetailViewController else {
+            return nil
+        }
+
+        return viewController
+    }
+}
+
+extension PageDetailViewController: ItemPresentable {
+    func configuredWith(item: Item) -> UIViewController {
+        descriptionText = item.description
+        return self
     }
 }
