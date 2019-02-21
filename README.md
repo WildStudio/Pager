@@ -25,7 +25,7 @@ pod 'Pager'
 ```
 ## Usage
 
-1) Create a your Model object inheriting from: `Ìtem` lie this:
+1) Create a your Model object inheriting from: `Ìtem` like this:
 
 ```
 class Model: Item {
@@ -39,7 +39,7 @@ class Model: Item {
 
 ```
 
-2) Create your detail view controller and conform to `ItemPresentable` lie this:
+2) Create your detail view controller and conform to `ItemPresentable` like this:
 
 ```
 extension PageDetailViewController: ItemPresentable {
