@@ -7,7 +7,7 @@ ___
 
 Pager library is the easiest way of setting up a Pager.  It comes with some convenience methods like, disabling swipe, and navigating backwards and forwards. Pager handles the menu navigation to navigate to a specific page.
 
-<img align="center" src="https://github.com/WildStudio/Pager/blob/master/2019-02-20%2018.15.36.gif" width="140" height="315" /></a>
+<img align="center" src="https://github.com/WildStudio/Pager/blob/master/2019-02-20%2018.15.36.gifhttps://github.com/WildStudio/Pager/blob/master/animation.gif" width="140" height="315" /></a>
 
 ## Requirements
 
