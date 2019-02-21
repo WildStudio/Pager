@@ -71,6 +71,6 @@ controller.configure(with: dataSource, controllers: controllers)
 
 ## License
 
-Paper Onboarding is released under the MIT license.
+Pager is released under the MIT license.
 
 If you use the open-source library in your project, please make sure to credit.
