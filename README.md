@@ -23,3 +23,54 @@ or use [CocoaPods](https://cocoapods.org) with Podfile:
 ``` ruby
 pod 'Pager'
 ```
+## Usage
+
+1) Create a your Model object inheriting from: `Ìtem` lie this:
+
+```
+class Model: Item {
+    let image: String
+
+    init(title: String, description: String, imageName: String) {
+        self.image = imageName
+        super.init(title: title, description: description)
+    }
+}
+
+```
+
+2) Create your detail view controller and conform to `ItemPresentable` lie this:
+
+```
+extension PageDetailViewController: ItemPresentable {
+    func configuredWith(item: Item) -> UIViewController {
+        guard let model = item as? Model else {
+            descriptionText = item.description
+            return self
+        }
+        
+        titleText = model.title
+        descriptionText = model.description
+        imageName = model.image
+        
+        return self
+    }
+}
+```
+
+3) Create PagerContainerViewController and configure:
+
+```
+
+let controller = Pager.PageContainerViewController.instantiate()
+present(controller, animated: true)
+
+let controllers = dataSource.map { _ in PageDetailViewController.instantiate() ?? PageDetailViewController() }
+controller.configure(with: dataSource, controllers: controllers)
+```
+
+## License
+
+Paper Onboarding is released under the MIT license.
+
+If you use the open-source library in your project, please make sure to credit.
